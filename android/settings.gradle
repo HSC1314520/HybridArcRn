@@ -41,7 +41,7 @@ rootProject.name = "rncli"
 
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 
-include(":rn_container")
+include(":rncli_bridge")
 
 // React-Native
 //includeBuild("../node_modules/react-native-gradle-plugin")
