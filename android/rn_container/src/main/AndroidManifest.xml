@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.facebook.react.android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- RN的开发者菜单 -->
+        <activity
+            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    </application>
+
+</manifest>

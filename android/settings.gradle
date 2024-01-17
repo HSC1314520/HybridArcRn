@@ -1,0 +1,47 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://developer.huawei.com/repo/" }
+        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    // RepositoriesMode，包含三个取值：
+    // 1.  PREFER_PROJECT：表示优先使用当前项目中指定的仓库。
+    // 2.  PREFER_SETTINGS：表示优先使用在 Gradle 设置文件 (settings.gradle) 中指定的仓库。
+    // 3.  FAIL_ON_PROJECT_REPOS：表示只使用明确声明的仓库，不允许使用当前项目的仓库。
+    // 这个枚举类型被标记为 @Incubating，表示这是一个孵化阶段的功能，在将来版本中可能会有所变化。
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        // All of React Native (JS, Android binaries) is installed from npm
+        maven { url "$rootDir/../node_modules/react-native/android" }
+        // Android JSC is installed from npm
+        maven { url "$rootDir/../node_modules/jsc-android/dist" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://developer.huawei.com/repo/" }
+        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "rncli"
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+
+include(":rn_container")
+
+// React-Native
+//includeBuild("../node_modules/react-native-gradle-plugin")

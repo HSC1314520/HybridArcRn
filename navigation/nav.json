@@ -1,0 +1,23 @@
+{
+  "name": "HybridArcRn",
+  "version": "1.0.0",
+  "time": "1704965540199",
+  "route": [
+    {
+      "route": "hybridarc://react-native/home",
+      "name": "Home"
+    },
+    {
+      "route": "hybridarc://react-native/a",
+      "name": "AScreen"
+    },
+    {
+      "route": "hybridarc://react-native/b",
+      "name": "BScreen"
+    },
+    {
+      "route": "hybridarc://react-native/c",
+      "name": "CScreen"
+    }
+  ]
+}
