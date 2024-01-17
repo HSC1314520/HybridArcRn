@@ -10,7 +10,7 @@ function App(data) {
     <NavigationContainer
       theme={{
         colors: {
-          background: 'transparent',
+          background: 'black',
         },
       }}
     >
