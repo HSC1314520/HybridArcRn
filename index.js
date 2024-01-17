@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native'
 import App from './App'
-import { name as appName } from './app.json'
+import { name } from '@navigation/nav.json'
 import NativeRouteListener from '@navigation/RouteListenerModule'
 import Navigation from '@navigation/Navigation'
 
@@ -9,4 +9,4 @@ const unsubscribe = NativeRouteListener((route) => {
   Navigation.navigate(route)
 })
 
-AppRegistry.registerComponent(appName, () => App)
+AppRegistry.registerComponent(name, () => App)

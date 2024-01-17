@@ -1,5 +1,5 @@
 import { RouteModule } from '@navigation/bridge/index'
-import navJson from '@navigation/nav.json'
+import { routes as navRouteList, name as moduleName } from '@navigation/nav.json'
 
 const ROUTE_SCHEME = 'hybridarc://'
 
@@ -44,6 +44,7 @@ class Navigation {
         // 查找到路由，回调给原生处理
         RouteModule.navigateToReactNativeCallback({
           route: route,
+          module: moduleName,
           name: navElement.name,
           params: params,
           status: true
@@ -79,8 +80,7 @@ class Navigation {
    * @returns 找到的路由信息，如果没有找到则返回null
    */
   findLocalRouteNameByRoute = (route) => {
-    const navList = navJson.route
-    for (let navElement of navList) {
+    for (let navElement of navRouteList) {
       if (navElement.route === route) {
         return navElement
       }

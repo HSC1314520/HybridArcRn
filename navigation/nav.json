@@ -2,7 +2,7 @@
   "name": "HybridArcRn",
   "version": "1.0.0",
   "time": "1704965540199",
-  "route": [
+  "routes": [
     {
       "route": "hybridarc://react-native/home",
       "name": "Home"
